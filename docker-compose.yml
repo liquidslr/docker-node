@@ -21,7 +21,7 @@ services:
     links:
       - db
   nginx:
-    image: sb-nginx:latest 
+    image: nginx
     restart: always
     ports:
       - 3000:80
