@@ -6,10 +6,6 @@ services:
       - 5432:5432
     volumes:
       - db:/var/lib/postgresql/data
-    environment:
-      - PGHOST=db
-      - PGDATABASE=user
-      - PGUSER=user
   app:
     build: .
     image: app
@@ -19,6 +15,10 @@ services:
     image: app
     links:
       - db
+    environment:
+      - PGHOST=db
+      - PGDATABASE=postgres
+      - PGUSER=postgres
   nginx:
     image: nginx
     restart: always
