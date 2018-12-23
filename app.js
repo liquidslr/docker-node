@@ -35,8 +35,8 @@ myStore.sync()
 app.use(express.static(__dirname + '/public'))
 
 app.get('/', function (request, response) {
-  response.send('Hello World!')
+  response.send('Hello World! @ URL /')
 })
 app.get('/api', function (request, response) {
-  response.send('Hello World!')
+  response.send('Hello World! @ URL /api ')
 })

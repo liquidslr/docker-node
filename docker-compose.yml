@@ -20,10 +20,10 @@ services:
       - PGDATABASE=postgres
       - PGUSER=postgres
   nginx:
-    image: nginx
+    image: nginx:custom
     restart: always
     ports:
-      - 3000:80
+      - 80:80
     links:
       - app
     volumes:
