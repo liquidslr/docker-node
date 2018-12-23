@@ -8,9 +8,8 @@ services:
       - db:/var/lib/postgresql/data
     environment:
       - PGHOST=db
-      - PGDATABASE=postgres
-      - PGUSER=postgres
-      - PGPASSWORD=postgres
+      - PGDATABASE=user
+      - PGUSER=user
   app:
     build: .
     image: app
@@ -27,13 +26,13 @@ services:
       - 3000:80
     links:
       - app
-     # Mount the volumes on the NGINX container
     volumes:
-      # Mount the imagery from the 'branding' folder in the root of the container
       - type: bind
         source: ./client/build
         target: /frontend
         read_only: true
+
+
 
 volumes:
   db:
